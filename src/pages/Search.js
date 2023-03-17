@@ -19,7 +19,7 @@ let searchSubject = new BehaviorSubject("");
 //   distinctUntilChanged(),// COMPARED WITH THE PREVIOUS INPUT TO CHECK IF THERE IS A DIFFERENCE,IF THERE IS NOT THE OLD INPUT REMAINS,IF YES THE NEW INPUT IS PUSHED
 //   mergeMap(val => from(getPokemon(val))),// 
 //   console.log("searchResultObservable called")
-);
+//);
 
 const useObservable = (observable, setter) => {
   useEffect(()=> {
