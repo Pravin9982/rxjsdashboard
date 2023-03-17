@@ -1,4 +1,5 @@
 import React from 'react'
+import "./UserList.css"
 
 export default function UsersList() {
     const userInfo = [{firstName:"Pravin",email:"pravin@gmail.com",city:"Klang",id:12},
