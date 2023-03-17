@@ -13,13 +13,13 @@ const getPokemon = async name =>{
 let searchSubject = new BehaviorSubject("");
 
 //TO OBSERVE TO searchSubject AND USE PIPE TO PERFORM CERTAIN OPERATORS 
-// let searchResultObservable = searchSubject.pipe(
-//   filter(val => val.length > 1), // TO ENSURE THAT SEARCH IS MORE THAN 1 BEFORE GETTING SIMILAR RESULTS
-//   debounceTime(700),// WAIT 700ms BEFORE PERFORMING SEARCH ON INPUT  
-//   distinctUntilChanged(),// COMPARED WITH THE PREVIOUS INPUT TO CHECK IF THERE IS A DIFFERENCE,IF THERE IS NOT THE OLD INPUT REMAINS,IF YES THE NEW INPUT IS PUSHED
-//   mergeMap(val => from(getPokemon(val))),// 
-//   console.log("searchResultObservable called")
-// );
+let searchResultObservable = searchSubject.pipe(
+  filter(val => val.length > 1), // TO ENSURE THAT SEARCH IS MORE THAN 1 BEFORE GETTING SIMILAR RESULTS
+  debounceTime(700),// WAIT 700ms BEFORE PERFORMING SEARCH ON INPUT  
+  distinctUntilChanged(),// COMPARED WITH THE PREVIOUS INPUT TO CHECK IF THERE IS A DIFFERENCE,IF THERE IS NOT THE OLD INPUT REMAINS,IF YES THE NEW INPUT IS PUSHED
+  mergeMap(val => from(getPokemon(val))),// 
+  console.log("searchResultObservable called")
+);
 
 const useObservable = (observable, setter) => {
   useEffect(()=> {
@@ -36,7 +36,8 @@ function Search() {
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
 
-  useObservable(searchSubject,setResults);
+
+  useObservable(searchResultObservable,setResults);//TEMPORARYLY USING searchSubject AS USING searchResultObservable GIVE AN ERROR OF "fn is not a function" 
 
   // TO SET THE SEARCH BAR WITH THE INPUT TEXT 
   const handleSearchChange = e => {
