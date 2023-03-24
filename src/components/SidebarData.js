@@ -19,6 +19,13 @@ export const SidebarData = [
         title: 'Users',
         path: '/users',
         icon: <AiIcons.AiOutlineDatabase/>,
-        cName: 'nav-text'
+        cName: 'nav-text',
+    },
+    {
+        title: 'To-Do',
+        path: '/todo',
+        icon: <AiIcons.AiOutlineDatabase/>,
+        cName: 'nav-text',
+        
     },
 ]

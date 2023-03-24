@@ -23,7 +23,7 @@ let searchSubject = new BehaviorSubject("");
 
 const useObservable = (observable, setter) => {
   useEffect(()=> {
-    //TO SUBSCRIBE TO THE OBSERVABLE EMITTED BY THE searchSubject
+    //TO SUBSCRIBE TO THE OBSERVABLE EMITTED BY THE searchResultObservable
     let subscription = observable.subscribe(results=>{
       setter(results);
     });

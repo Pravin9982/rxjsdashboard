@@ -5,6 +5,8 @@ import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Users from './pages/Users';
+import Todo from './pages/Todo';
+
 function App() {
   return (
     <>
@@ -14,9 +16,9 @@ function App() {
           <Route path="/" exact Component={Home}></Route>
           <Route path="/search" Component={Search}></Route>
           <Route path="/users" Component={Users}></Route>
+          <Route path='/todo' Component={Todo}></Route>
 
         </Routes>
-          
       </Router>
     </>
   );
