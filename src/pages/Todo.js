@@ -1,6 +1,13 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import './Todo.css';
+//import Calculator from "../../../calculatormf/src/Calculator";
+const Calculator = React.lazy(()=> import("../../calculatormf/src/Calculator")) ;
+// import { Calculator } from "calculatormf/Calculator";
 
+// import Header from "../../../homemf/src/Header";
+// import Footer from "../../../homemf/src/Footer";
+// import UserForm from "../../../homemf/src/userForms";
 
  const TodoList = () => { 
     const [todo, setTodo] = useState("");
@@ -47,6 +54,8 @@ const handleEnterKey = (e) =>{
             </span>
             
         </ul> 
+        <Calculator/>
+       
       </div> 
     ); 
 }; 

@@ -62,10 +62,16 @@ function Home() {
     }
     
   }
+
+  const handleEnterKey =(e)=>{
+    if (e.key ==="Enter"){
+        pressed(e);
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <input type="text" value={text} onChange={change} />
+        <input type="text" value={text} onChange={change} onKeyDown={handleEnterKey} />
 
         <button onClick={pressed} className='Button'>Verify</button>
         <img src={startLogo} className="App-logo" alt="logo" />
